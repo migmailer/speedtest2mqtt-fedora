@@ -1,0 +1,14 @@
+version: '2'
+services:
+  speedtest2mqtt:
+    image: migmailer/speedtest2mqtt
+    restart: always
+    network_mode: host
+    environment:
+      MQTT_HOST: 'hostname'
+      MQTT_ID: 'speedtest'
+      MQTT_TOPIC: 'speedtest/status'
+      MQTT_OPTIONS: "-V mqttv311 -u user -P password -r"
+      SPEEDTEST_OPTIONS: '--server 16497'
+      DELAY: '1200'
+
